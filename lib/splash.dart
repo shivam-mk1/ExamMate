@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     _controller.addListener(() {
       if (_controller.value.position == _controller.value.duration) {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) => Home(),
@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ? Center(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width * 0.78,
-                  height: MediaQuery.of(context).size.height * 0.45,
+                  height: MediaQuery.of(context).size.height * 0.35,
                   child: AspectRatio(
                     aspectRatio: _controller.value.aspectRatio,
                     child: VideoPlayer(_controller),

@@ -13,14 +13,38 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  static const Color customColor = Color.fromARGB(255, 39, 207, 193);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
       theme: ThemeData(
-        fontFamily: 'Quicksand',
-        textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.black),
+        fontFamily: 'Lato',
+        primaryColor: customColor,
+
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: customColor,
+          primary: customColor,
+          secondary: customColor,
+          brightness: Brightness.light,
+        ),
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: customColor,
+          selectionColor: Color.fromARGB(100, 39, 207, 193),
+          selectionHandleColor: customColor,
+        ),
+
+        progressIndicatorTheme: const ProgressIndicatorThemeData(
+          color: customColor,
+          linearTrackColor: Color.fromARGB(100, 39, 207, 193),
+        ),
+
+        buttonTheme: const ButtonThemeData(buttonColor: customColor),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: customColor,
+        ),
       ),
     );
   }
